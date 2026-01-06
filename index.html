@@ -3,150 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ostia Landing Variants</title>
+    <title>Ostia Landing Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #ffffff;
-            --text: #111111;
-            --card-bg: #f5f5f5;
+            --bg: #fbfaf7;
+            --card: #ffffff;
+            --ink: #1c1c1c;
+            --muted: #6b6b6b;
+            --border: rgba(0, 0, 0, 0.08);
+            --accent: #0f766e;
         }
-        [data-theme="dark"] {
-            --bg: #111111;
-            --text: #ffffff;
-            --card-bg: #222222;
-        }
+        * { box-sizing: border-box; }
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
             margin: 0;
-            padding: 2rem;
-            transition: background 0.3s, color 0.3s;
+            font-family: 'Sora', sans-serif;
+            background: radial-gradient(circle at top, #ffffff 0%, #fbfaf7 55%, #f5f3ee 100%);
+            color: var(--ink);
         }
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
+            padding: 48px 6vw 24px;
         }
-        h1 { margin: 0; }
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.02em;
+        }
+        p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 60ch;
+        }
+        main {
+            padding: 24px 6vw 64px;
+        }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
         }
         .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--card);
             text-decoration: none;
             color: inherit;
-            border: 1px solid transparent;
-            transition: transform 0.2s, border-color 0.2s;
-            display: block;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .card:hover {
             transform: translateY(-2px);
-            border-color: #666;
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
         }
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            background: #ddd;
-            color: #000;
-            border-radius: 4px;
-            margin-top: 0.5rem;
+        .label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
         }
-        [data-theme="dark"] .tag {
-            background: #444;
-            color: #fff;
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
         }
-        #theme-toggle {
-            background: none;
-            border: 1px solid currentColor;
-            color: inherit;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
+        .cta {
+            margin-top: auto;
             font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        footer {
+            padding: 24px 6vw 48px;
+            color: var(--muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ostia Design Gallery</h1>
-        <button id="theme-toggle">Switch Theme</button>
+        <h1>Ostia Landing Gallery</h1>
+        <p>Open any variant below. Each link loads a full landing page concept in a new tab.</p>
     </header>
-
-    <main class="grid">
-        <a href="variant-a/index.html" class="card">
-            <h3>Variant A</h3>
-            <p>Corporate Standard</p>
-        </a>
-        <a href="variant-b/index.html" class="card">
-            <h3>Variant B</h3>
-            <p>Startup Minimal</p>
-        </a>
-        <a href="variant-c/index.html" class="card">
-            <h3>Variant C</h3>
-            <p>Tech SaaS</p>
-        </a>
-        <a href="variant-d/index.html" class="card">
-            <h3>Variant D</h3>
-            <p>Typography Focus</p>
-        </a>
-        <a href="variant-e/index.html" class="card">
-            <h3>Variant E</h3>
-            <p>Grid Layout</p>
-        </a>
-        <a href="variant-f/index.html" class="card">
-            <h3>Variant F</h3>
-            <p>Brutalist Bold</p>
-        </a>
-        <a href="variant-g/index.html" class="card">
-            <h3>Variant G</h3>
-            <p>Organic Tech</p>
-        </a>
-        <a href="variant-h/index.html" class="card">
-            <h3>Variant H</h3>
-            <p>High Contrast</p>
-        </a>
-        <a href="variant-i/index.html" class="card">
-            <h3>Variant I</h3>
-            <p>Monolith</p>
-            <span class="tag">Dark Concept</span>
-        </a>
-        <a href="variant-j/index.html" class="card">
-            <h3>Variant J</h3>
-            <p>Nebula</p>
-            <span class="tag">Dark Concept</span>
-        </a>
-        <a href="variant-k/index.html" class="card">
-            <h3>Variant K</h3>
-            <p>Obsidian</p>
-            <span class="tag">Dark Concept</span>
-        </a>
+    <main>
+        <div class="grid">
+            <a class="card" href="variant-a/" target="_blank" rel="noopener">
+                <span class="label">Variant A</span>
+                <span class="title">Architectural Minimal</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-b/" target="_blank" rel="noopener">
+                <span class="label">Variant B</span>
+                <span class="title">Glassy Kinetic</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-c/" target="_blank" rel="noopener">
+                <span class="label">Variant C</span>
+                <span class="title">Editorial Archive</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-d/" target="_blank" rel="noopener">
+                <span class="label">Variant D</span>
+                <span class="title">Cinematic Minimal</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-e/" target="_blank" rel="noopener">
+                <span class="label">Variant E</span>
+                <span class="title">Dynamic Sculptural</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-f/" target="_blank" rel="noopener">
+                <span class="label">Variant F</span>
+                <span class="title">Bold Grid Brutal</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-g/" target="_blank" rel="noopener">
+                <span class="label">Variant G</span>
+                <span class="title">Glass Gradient</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-h/" target="_blank" rel="noopener">
+                <span class="label">Variant H</span>
+                <span class="title">Monochrome Editorial</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-i/" target="_blank" rel="noopener">
+                <span class="label">Variant I</span>
+                <span class="title">Monolith Dark</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-j/" target="_blank" rel="noopener">
+                <span class="label">Variant J</span>
+                <span class="title">Nebula Dark</span>
+                <span class="cta">Open</span>
+            </a>
+            <a class="card" href="variant-k/" target="_blank" rel="noopener">
+                <span class="label">Variant K</span>
+                <span class="title">Obsidian Dark</span>
+                <span class="cta">Open</span>
+            </a>
+        </div>
     </main>
-
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        const stored = localStorage.getItem('ostia-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (stored === 'dark' || (!stored && prefersDark)) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        toggle.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            if (current === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('ostia-theme', 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('ostia-theme', 'dark');
-            }
-        });
-    </script>
+    <footer>(c) 2026 Ostia, Inc.</footer>
 </body>
 </html>

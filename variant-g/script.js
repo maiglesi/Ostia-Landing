@@ -1,8 +1,40 @@
-const t = document.getElementById('theme-toggle');
-const s = localStorage.getItem('ostia-theme');
-if(s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme:dark)').matches)) document.documentElement.setAttribute('data-theme','dark');
-t.onclick=()=>{
-    const d=document.documentElement;
-    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');localStorage.setItem('ostia-theme','light');}
-    else{d.setAttribute('data-theme','dark');localStorage.setItem('ostia-theme','dark');}
-};
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const stored = localStorage.getItem('ostia-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (stored === 'dark' || (!stored && prefersDark)) {
+        root.setAttribute('data-theme', 'dark');
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            if (root.getAttribute('data-theme') === 'dark') {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('ostia-theme', 'light');
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                localStorage.setItem('ostia-theme', 'dark');
+            }
+        });
+    }
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+        document.querySelectorAll('.observe-blur').forEach((el) => {
+            el.classList.add('in-view');
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.observe-blur').forEach(el => observer.observe(el));
+});

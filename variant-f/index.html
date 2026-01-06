@@ -2,16 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ostia - Variant F</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSTIA // AGENCY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="theme-toggle">Mode</button>
+    <div class="grid-overlay"></div>
+    
+    <header>
+        <div class="logo-area">
+            <h1>OSTIA</h1>
+            <span class="badge">BETA</span>
+        </div>
+        <div class="header-controls">
+            <div class="menu-btn">MENU</div>
+            <button class="dark-toggle" id="theme-toggle">Dark Mode</button>
+        </div>
+    </header>
+
     <main>
-        <h1>OSTIA</h1>
-        <p>The future of how work will be done in the world of agentic AI for all roles.</p>
+        <section class="hero-block">
+            <div class="hero-text-wrapper">
+                <h2 class="stagger-text">The future of</h2>
+                <h2 class="stagger-text">how work will</h2>
+                <h2 class="stagger-text">be done in the</h2>
+                <h2 class="stagger-text">world of agentic</h2>
+                <h2 class="stagger-text highlight">AI for all roles.</h2>
+            </div>
+            
+            <div class="hero-sub stagger-fade">
+                <p>Redefining the physics of productivity. Your goals, executed by a billion intelligent nodes.</p>
+                <a href="#" class="btn-brutalist">DEPLOY AGENTS <span>-></span></a>
+            </div>
+        </section>
+
+        <div class="marquee-container">
+            <div class="marquee">
+                <span>AUTONOMOUS EXECUTION /// ZERO LATENCY /// PERPETUAL OPTIMIZATION /// </span>
+                <span>AUTONOMOUS EXECUTION /// ZERO LATENCY /// PERPETUAL OPTIMIZATION /// </span>
+            </div>
+        </div>
+
+        <section class="grid-section">
+            <div class="grid-item reveal-slide">
+                <span class="idx">01</span>
+                <h3>Scale</h3>
+                <p>Infinite capacity for cognitive labor.</p>
+            </div>
+            <div class="grid-item reveal-slide delay-1">
+                <span class="idx">02</span>
+                <h3>Speed</h3>
+                <p>Decisions made at the speed of silicon.</p>
+            </div>
+            <div class="grid-item reveal-slide delay-2">
+                <span class="idx">03</span>
+                <h3>Safety</h3>
+                <p>Guaranteed alignment protocols.</p>
+            </div>
+        </section>
     </main>
-    <footer>(c) 2026 Ostia, Inc.</footer>
+
+    <footer>
+        <div class="footer-top">
+            <h2>Ready to evolve?</h2>
+        </div>
+        <div class="footer-btm">
+            <p>(c) 2026 Ostia, Inc.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
