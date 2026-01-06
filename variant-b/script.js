@@ -1,20 +1,18 @@
-function setTheme(themeName) {
-    if (themeName === 'base') {
-        document.documentElement.removeAttribute('data-theme');
-    } else {
-        document.documentElement.setAttribute('data-theme', themeName);
-    }
+// Shared logic
+const toggle = document.getElementById('theme-toggle');
+const saved = localStorage.getItem('ostia-theme');
+const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (saved === 'dark' || (!saved && sysDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
 }
 
-// Intersection Observer for scroll animations
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal-scroll').forEach((el) => {
-    observer.observe(el);
+toggle.addEventListener('click', () => {
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('ostia-theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('ostia-theme', 'dark');
+    }
 });

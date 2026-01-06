@@ -3,77 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ostia | Variant A</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ostia - Variant A</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grid-background"></div>
-    
-    <nav class="navbar">
-        <div class="logo">OSTIA.SYS</div>
-        <div class="theme-switcher">
-            <button class="theme-btn" data-theme="default" aria-label="Default Theme"></button>
-            <button class="theme-btn" data-theme="paper" aria-label="Paper Theme"></button>
-            <button class="theme-btn" data-theme="ceramic" aria-label="Ceramic Theme"></button>
+    <nav>
+        <div class="logo">Ostia</div>
+        <div class="nav-links">
+            <a href="#">Product</a>
+            <a href="#">Solutions</a>
+            <button id="theme-toggle">Dark Mode</button>
         </div>
     </nav>
+    
+    <header class="hero">
+        <div class="container">
+            <h1>Agentic Workflow</h1>
+            <p class="tagline">The future of how work will be done in the world of agentic AI for all roles.</p>
+            <button class="cta">Get Started</button>
+        </div>
+    </header>
 
-    <main>
-        <header class="hero section-reveal">
-            <div class="hero-content">
-                <span class="eyebrow">/// SYSTEM_READY</span>
-                <h1 class="glitch-text">Construct<br>Intelligence</h1>
-                <p class="hero-tagline">The future of how work will be done in the world of agentic AI for all roles.</p>
-                <div class="cta-group">
-                    <a href="#" class="btn btn-primary">Initialize Sequence</a>
-                    <a href="#" class="btn btn-secondary">Read Manifest</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="artifact-panel">
-                    <div class="panel-header">
-                        <span>AGENT_01</span>
-                        <span>ACTIVE</span>
-                    </div>
-                    <div class="panel-body">
-                        <div class="data-row"></div>
-                        <div class="data-row"></div>
-                        <div class="data-row"></div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <section class="features section-reveal">
-            <div class="feature-card">
-                <h3>01. Symbiosis</h3>
-                <p>Dissolve the barrier between intent and execution.</p>
-            </div>
-            <div class="feature-card">
-                <h3>02. Resonance</h3>
-                <p>Workflows that adapt to your cognitive rhythm.</p>
-            </div>
-            <div class="feature-card">
-                <h3>03. Scale</h3>
-                <p>Infinite leverage for the singular mind.</p>
-            </div>
-        </section>
-
-        <section class="quote section-reveal">
-            <blockquote>"The architecture of thought, rebuilt."</blockquote>
-        </section>
-    </main>
+    <section class="features container">
+        <div class="feature">
+            <h3>Automate</h3>
+            <p>Streamline complex tasks with autonomous agents.</p>
+        </div>
+        <div class="feature">
+            <h3>Orchestrate</h3>
+            <p>Manage multi-agent systems seamlessly.</p>
+        </div>
+        <div class="feature">
+            <h3>Scale</h3>
+            <p>Expand operations without linear headcount growth.</p>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <span>(c) 2026 Ostia, Inc.</span>
-            <span>Status: Operational</span>
-        </div>
+        <p>(c) 2026 Ostia, Inc.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
